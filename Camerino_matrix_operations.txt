@@ -1,0 +1,42 @@
+
+# Matrix Operations based on provided instructions
+
+# Define the matrices
+matrix1 = [[23, 13, 3], [1, 9, 1]]
+matrix2 = [[2, 0, 2], [6, 1, 4]]
+
+# 1.b. Print both matrices
+print("Matrix 1:", matrix1)
+print("Matrix 2:", matrix2)
+
+# 2. Matrix Addition
+matrix3 = [[matrix1[i][j] + matrix2[i][j] for j in range(3)] for i in range(2)]
+print("\nMatrix 3 (Matrix1 + Matrix2):", matrix3)
+
+# 3. Scalar Multiplication
+matrix4 = [[matrix1[i][j] * 2 for j in range(3)] for i in range(2)]
+print("\nMatrix 4 (Matrix1 * 2):", matrix4)
+
+# 4. Matrix Transpose (Transpose of Matrix 2)
+matrix5 = [[matrix2[j][i] for j in range(2)] for i in range(3)]
+print("\nMatrix 5 (Transpose of Matrix2):", matrix5)
+
+# 5. Matrix Multiplication (Matrix3 x Matrix5)
+matrix6 = []
+for i in range(2):
+    row = []
+    for j in range(2):
+        sum_product = 0
+        for k in range(3):
+            sum_product += matrix3[i][k] * matrix5[k][j]
+        row.append(sum_product)
+    matrix6.append(row)
+print("\nMatrix 6 (Matrix3 x Matrix5):", matrix6)
+
+# 6. Sum of All Elements in Matrix 3
+sum_matrix3 = sum(sum(row) for row in matrix3)
+print("\nSum of all elements in Matrix 3:", sum_matrix3)
+
+# 7. Zero Matrix 2x3
+matrix7 = [[0 for _ in range(3)] for _ in range(2)]
+print("\nMatrix 7 (Zero Matrix 2x3):", matrix7)
